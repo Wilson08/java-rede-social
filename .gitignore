@@ -3,3 +3,11 @@
 
 # Ada Library Information
 *.ali
+
+# git
+*.git
+
+#Vscode
+*.vscode
+
+
