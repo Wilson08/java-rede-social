@@ -1,10 +1,17 @@
 package Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Daos.ProdutoDAO;
+import Models.Produto;
+
 @Controller
 public class ProdutosController {
+	
+	@Autowired
+	private ProdutoDAO produtoDao;
 	
 	@RequestMapping("/produtos/form")
 	public String form() {
@@ -12,11 +19,10 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping("/produtos")
-	public String grava(String titulo, String descricao, int paginas) {
-		System.out.println(titulo);
-		System.out.println(descricao);
-		System.out.println(paginas);
-		return descricao;
+	public String grava(Produto produto) {
+		System.out.println(produto);
+		produtoDao.gravar(produto);
+		return "produtos/ok";
 	}
 
 }
