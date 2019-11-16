@@ -25,12 +25,7 @@ public class PostController {
 	@RequestMapping(value="/post", method=RequestMethod.POST)
 	public String grava(Post post) {
 		Usuario user = new Usuario();
-		
-		user.setId(1);
-		user.setEmail("daniel");
-		user.setName("daniel");
-		user.setSenha("daniel");
-		post.setUser(user);
+		post.setUser(UsuarioController.userLogged);
 		postDAO.gravar(post);
 		return "post/ok";
 	}
