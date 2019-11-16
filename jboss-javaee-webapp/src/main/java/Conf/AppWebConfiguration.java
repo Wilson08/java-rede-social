@@ -6,10 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import Controller.HomeController;
-import Daos.ProdutoDAO;
+import Daos.PostDAO;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {HomeController.class, ProdutoDAO.class})
+@ComponentScan(basePackageClasses = {HomeController.class, PostDAO.class})
 public class AppWebConfiguration {
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
